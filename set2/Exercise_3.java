@@ -11,7 +11,7 @@ public class Exercise_3 {
                     System.out.println(num + " is odd");
                 }
             } catch (Exception e) {
-                System.out.println("Must be an integer");
+                System.out.println(arg + " is not an integer");
             }
         }
     }
