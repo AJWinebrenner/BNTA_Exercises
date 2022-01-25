@@ -1,7 +1,5 @@
 package set2;
 
-import java.util.Scanner;
-
 public class Exercise_2 {
     public static void main(String[] args) {
         String input = "   b ri   ght net   work  ";
@@ -19,9 +17,7 @@ public class Exercise_2 {
                 }
                 output.append(input.charAt(i));
             }
-
         }
-
         System.out.println(output);
     }
 }
