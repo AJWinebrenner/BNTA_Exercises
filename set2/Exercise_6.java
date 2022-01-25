@@ -7,6 +7,6 @@ public class Exercise_6 {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Enter an E-mail address");
-        System.out.println(Email.isEmail(input.nextLine()));
+        System.out.println(Email.validateEmail(input.nextLine()));
     }
 }
