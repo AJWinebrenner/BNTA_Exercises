@@ -8,6 +8,6 @@ public class Exercise_3 {
         for (int i = content.length-1; i >= 0; i--) {
             reverse.append(content[i]).append(" ");
         }
-        System.out.println(reverse + "?");
+        System.out.println(reverse.substring(0, reverse.length() - 1) + "?");
     }
 }
