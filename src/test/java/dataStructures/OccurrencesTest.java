@@ -47,9 +47,27 @@ class OccurrencesTest {
     }
 
     @Test
+    void canHandleSpaces() {
+        // Given
+        String input = "1, 1,1 ,1 ,3,4 ,5, 6,7,7,7,8,8 ";
+        // When
+        HashMap<String, Integer> actual = underTest.numberOfOccurrences(input);
+        // Then
+        HashMap<String, Integer> expected = new HashMap<>();
+        expected.put("1", 4);
+        expected.put("3", 1);
+        expected.put("4", 1);
+        expected.put("5", 1);
+        expected.put("6", 1);
+        expected.put("7", 3);
+        expected.put("8", 2);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
     void getMostOccurrencesTest() {
         // Given
-        String input = "1,1,1,1,3,4,5,6,7,7,7,8,8";;
+        String input = "1,1,1,1,3,4,5,6,7,7,7,8,8";
         // When
         String actual = underTest.getMostOccurrences(input);
         // Then
@@ -57,5 +75,26 @@ class OccurrencesTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    void canReturnNull() {
+        // Given
+        String input = " ";
+        // When
+        String actual = underTest.getMostOccurrences(input);
+        // Then
+        String expected = null;
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void mostOccurrencesFavoursFirst() {
+        // Given
+        String input = "1,1,1,1,3,4,5,6,7,7,7,7,8,8";
+        // When
+        String actual = underTest.getMostOccurrences(input);
+        // Then
+        String expected = "1";
+        assertThat(actual).isEqualTo(expected);
+    }
 
 }

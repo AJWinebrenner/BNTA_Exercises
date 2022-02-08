@@ -24,7 +24,7 @@ public class Occurrences {
         if (string.matches(".*\\S.*")) {
             String[] strings = string.split(",");
             for (String s : strings) {
-                numOfEach.put(s.trim(), numOfEach.getOrDefault(s, 0) + 1);
+                numOfEach.put(s.trim(), numOfEach.getOrDefault(s.trim(), 0) + 1);
             }
         }
         return numOfEach;
