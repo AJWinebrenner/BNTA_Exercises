@@ -5,8 +5,7 @@ import java.util.Stack;
 public class Parenthesis {
 
     public String getOnly(String string) {
-        string = string.trim().replaceAll("[^\\[\\]}{)(]","");
-        return string;
+        return string.trim().replaceAll("[^\\[\\]}{)(]","");
     }
 
     public boolean isBalanced(String string) {
@@ -19,8 +18,7 @@ public class Parenthesis {
                 case '[' -> checker.push(']');
                 default -> {
                     if (checker.isEmpty()) return false;
-                    char check = checker.pop();
-                    if (c != check) return false;
+                    if (c != checker.pop()) return false;
                 }
             }
         }
