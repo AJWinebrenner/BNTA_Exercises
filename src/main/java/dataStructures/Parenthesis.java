@@ -18,6 +18,7 @@ public class Parenthesis {
                 case '{' -> checker.push('}');
                 case '[' -> checker.push(']');
                 default -> {
+                    if (checker.isEmpty()) return false;
                     char check = checker.pop();
                     if (c != check) return false;
                 }

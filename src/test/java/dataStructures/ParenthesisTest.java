@@ -92,4 +92,15 @@ class ParenthesisTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    void isBalancedHandlesBeginningClosingBracket() {
+        // Given
+        String input = "}[]({}[])()";
+        // When
+        boolean actual = underTest.isBalanced(input);
+        // Then
+        boolean expected = false;
+        assertThat(actual).isEqualTo(expected);
+    }
+
 }
